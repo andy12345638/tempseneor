@@ -6,7 +6,6 @@ readtemp () { n="$1" ;echo "select * from tempdb.temp order by timestamp desc li
 temp1=`readtemp 3`
 temp2=`readtemp 4`
 
-
 while [ 1==1 ]
 do
         temp1=`readtemp 3`
