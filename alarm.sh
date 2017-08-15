@@ -7,18 +7,18 @@ temp1=`readtemp 3`
 temp2=`readtemp 4`
 
 
-while [ 1==1 ]
+while [ "1" -eq "1" ]
 do
         temp1=`readtemp 3`
 	sendtimes=0
         echo $temp1
-        while [ ( $(echo "$temp1 > 30.00"|bc -l) ) ]
+        while [ 1 -eq $(echo "$temp1 > 32.00"|bc -l) ]
         do
                 echo "temp1>30"
 			if [ "$sendtimes" -lt "3" ]
 			then
 				echo "send"#send email
-				./alarmemail.sh
+				#./alarmemail.sh
 				let "sendtimes++"
 			fi
                 sleep 3
