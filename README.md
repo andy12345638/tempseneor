@@ -19,3 +19,7 @@ rpi3 with ds18b20
 6.寄email的bash sendemail.sh alarmemail.sh  
 7.畫出30分鐘圖表的rscritp #temp120png.r  
 8.畫出一週圖表的rscritp temp10080png.r  
+
+# 事前準備
+## exim4
+`sudo apt-get install mutt`
