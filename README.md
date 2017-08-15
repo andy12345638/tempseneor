@@ -22,7 +22,9 @@ rpi3 with ds18b20
 
 # 事前準備
 ## exim4
-`sudo apt-get install mutt`
+`sudo apt-get install exim4 mutt`
+>https://fourdollars.blogspot.tw/2014/08/ubuntu-1404-exim4-gmail.html
+
 ## mysql
 `sudo apt-get install mysql-server mysql-clent`  
 `mysql -u root -p `  
