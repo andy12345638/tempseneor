@@ -12,7 +12,7 @@ do
         temp1=`readtemp 3`
 	sendtimes=0
         echo $temp1
-        while [  echo "$temp1 > 30.00"|bc -l ]
+        while [ ( $(echo "$temp1 > 30.00"|bc -l) ) ]
         do
                 echo "temp1>30"
 			if [ "$sendtimes" -lt "3" ]
