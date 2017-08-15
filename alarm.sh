@@ -12,7 +12,7 @@ do
         temp1=`readtemp 3`
 	sendtimes=0
         echo $temp1
-        while [ "$temp1" -gt "31000" ]
+        while [ "$temp1" -gt "30.00" ]
         do
                 echo "temp1>31"
 			if [ "$sendtimes" -lt "3" ]
@@ -21,11 +21,11 @@ do
 				./alarmemail.sh
 				let "sendtimes++"
 			fi
-                sleep 600
+                sleep 3
 		temp1=`readtemp 3`
 	        echo $temp1
         done
 
-        sleep 60
+        sleep 10
 done
 
