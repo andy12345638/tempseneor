@@ -2,12 +2,12 @@
 rpi3 with ds18b20
 
 # 材料
-1.Raspberry PI 3 Model B $1800內  
-2.Sandisk sd card 32G $500 內  
-3.110V to USB 充電器 2.5A $300  
-4.usb 充電線 30cm $100內  
-5.DS18B20 溫度感應器 3米*4條 $1500 內  
-6.其他焊接材料(洞洞板、電阻、杜邦頭)$300內  
+1. Raspberry PI 3 Model B $1800內  
+2. Sandisk sd card 32G $500 內  
+3. 110V to USB 充電器 2.5A $300  
+4. usb 充電線 30cm $100內  
+5. DS18B20 溫度感應器 3米*4條 $1500 內  
+6. 其他焊接材料(洞洞板、電阻、杜邦頭)$300內  
 共計 $4500 內  
 
 # 架構
