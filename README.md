@@ -73,10 +73,10 @@ https://www.raspberrypi.org/forums/viewtopic.php?t=111375&p=765242
 `cat /sys/bus/w1/devices/28-00000283c6cd/w1_slave | sed -n 's/^.*\(t=[^ ]*\).*/\1/p' | sed 's/t=//' | awk '{x=$1}END{print(x/1000)}'`  
 
 # Set crontab
-`crontab -e`#add
-* * * * * /home/pi/tempsensor/scantemp.sh
-@reboot /home/pi/tempsensor/alarm.sh
-0 9 * * 1 /home/pi/tempsensor/sendemail.sh
+`crontab -e`#add  
+`* * * * * /home/pi/tempsensor/scantemp.sh`  
+`@reboot /home/pi/tempsensor/alarm.sh`  
+`0 9 * * 1 /home/pi/tempsensor/sendemail.sh`  
 
 
 
