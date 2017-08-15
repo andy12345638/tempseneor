@@ -33,3 +33,9 @@ temp1 decimal(5,3),
 temp2 decimal(5,3),  
 temp3 decimal(5,3),  
 temp4 decimal(5,3));  `
+
+## R
+`sudo apt-get install r-base`  
+`R`  
+`install.packages("DBI")`  
+`install.packages("RMySQL")`
