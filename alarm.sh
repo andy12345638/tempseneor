@@ -18,7 +18,7 @@ do
 			if [ "$sendtimes" -lt "3" ]
 			then
 				echo "send"#send email
-				./sendemail.sh
+				./alarmemail.sh
 				let "sendtimes++"
 			fi
                 sleep 600
