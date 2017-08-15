@@ -6,5 +6,5 @@ dbDisconnect(conn)
 temp.df$timestamp=as.POSIXct(temp.df$timestamp)
 
 png("temp10080png.png")
-plot(temp.df$temp1~temp.df$timestamp,type="l",ylab="Temperature",xlab="Time",main=paste(head(temp.df$timestamp,1),"~",substr(tail(temp.df$timestamp,1),12,20)))
+plot(temp.df$temp1~temp.df$timestamp,type="l",ylab="Temperature",xlab="Time",main=paste(head(temp.df$timestamp,1),"~",substr(tail(temp.df$timestamp,1),1,20)))
 dev.off()
