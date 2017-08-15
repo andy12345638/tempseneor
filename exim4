@@ -1,3 +1,0 @@
-sudo apt-get install mutt
-mutt -s "test mail" andy12345638@gmail.com -a ./a.png <mail.txt 
-
