@@ -7,7 +7,7 @@ temp.df$timestamp=as.POSIXct(temp.df$timestamp)
 #dtTime <- as.numeric(temp.df$timestamp - trunc(temp.df$timestamp, "hours"))
 
 
-png("temp120png.png")
+png("temp120png.png",width = 1200, height = 400)
 plot(temp.df$temp1~temp.df$timestamp,type="l",ylab="Temperature",xlab="Time",main=paste(head(temp.df$timestamp,1),"~",substr(tail(temp.df$timestamp,1),12,20)))
 #paste(head(temp.df$timestamp,1),"~",substr(tail(temp.df$timestamp,1),12,20))
 dev.off()
