@@ -40,16 +40,17 @@ temp4 decimal(5,3));  `
 `install.packages("DBI")`  
 `install.packages("RMySQL")`
 
-For those who might doing same stuff like me, here is how i fix the issue.  
+https://www.raspberrypi.org/forums/viewtopic.php?t=111375&p=765242
+>For those who might doing same stuff like me, here is how i fix the issue.  
 
-1. Guess this is really an out of memory issue, some how Pi runs out of memory when installing RSQLite package. So you have to increase swap file size to prevent the out of memory error kicks in.  
-2. Type in command "sudo nano /etc/dphys-swapfile" without the quote.  
-3. edit the line "CONF_SWAPSIZE=100" to "CONF_SWAPSIZE=1024" (I'm using model B with 512MB, so the recommended value is 2*RAM size, and of course you need a bigger SD card at least 2GB free space available)  
-4. Save the change to dphys-swapfile file and go to root directory using cd /  
-5. type in "sudo /etc/init.d/dphys-swapfile stop" to stop the current swap file  
-6. type in "sudo /etc/init.d/dphys-swapfile start" to create new swap file with 1024MB size, you should see a message "generating swapfile ... of 1024MBytes"  
-7. Start R and install RSQLite package like normal, you should not see the error anymore. It will take a while to complete the installation.  
-8. You can repeat step 2 to step 6 if you don't want to allocate 1GB for swap file, change back CONF_SWAPSIZE to 100 to get back the space u need.  
+>1. Guess this is really an out of memory issue, some how Pi runs out of memory when installing RSQLite package. So you have to increase swap file size to prevent the out of memory error kicks in.  
+>2. Type in command "sudo nano /etc/dphys-swapfile" without the quote.  
+>3. edit the line "CONF_SWAPSIZE=100" to "CONF_SWAPSIZE=1024" (I'm using model B with 512MB, so the recommended value is 2*RAM size, and of course you need a bigger SD card at least 2GB free space available)  
+>4. Save the change to dphys-swapfile file and go to root directory using cd /  
+>5. type in "sudo /etc/init.d/dphys-swapfile stop" to stop the current swap file  
+>6. type in "sudo /etc/init.d/dphys-swapfile start" to create new swap file with 1024MB size, you should see a message "generating swapfile ... of 1024MBytes"  
+>7. Start R and install RSQLite package like normal, you should not see the error anymore. It will take a while to complete the installation.  
+>8. You can repeat step 2 to step 6 if you don't want to allocate 1GB for swap file, change back CONF_SWAPSIZE to 100 to get back the space u need.  
 
 
 
