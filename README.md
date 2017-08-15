@@ -39,3 +39,22 @@ temp4 decimal(5,3));  `
 `R`  
 `install.packages("DBI")`  
 `install.packages("RMySQL")`
+
+## W1
+`sudo modprobe w1-gpio && sudo modprobe w1_therm`  
+`sudo vim /etc/modules #add`  
+`w1-gpio `  
+`w1_therm `  
+
+`sudo vim /boot/config.txt #add `  
+`dtoverlay=w1-gpio #pin4`  
+
+`sudo reboot`  
+
+`ls -l /sys/bus/w1/devices/`
+`cat /sys/bus/w1/devices/28-00000283c6cd/w1_slave`
+
+`cat /sys/bus/w1/devices/28-00000283c6cd/w1_slave | sed -n 's/^.*\(t=[^ ]*\).*/\1/p' | sed 's/t=//' | awk '{x=$1}END{print(x/1000)}'`  
+
+
+
