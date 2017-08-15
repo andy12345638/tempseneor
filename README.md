@@ -23,3 +23,13 @@ rpi3 with ds18b20
 # 事前準備
 ## exim4
 `sudo apt-get install mutt`
+## mysql
+`sudo apt-get install mysql-server mysql-clent`  
+`mysql -u root -p `  
+`CREATE DATABASE tempdb;  
+USE tempdb;  
+CREATE TABLE temp (timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  
+temp1 decimal(5,3),  
+temp2 decimal(5,3),  
+temp3 decimal(5,3),  
+temp4 decimal(5,3));  `
