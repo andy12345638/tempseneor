@@ -36,6 +36,20 @@ temp2 decimal(5,3),
 temp3 decimal(5,3),  
 temp4 decimal(5,3));  `
 
+---
+`use mysql;  
+ 
+INSERT INTO user(host,user,password) VALUES('%','rpi',password('paswd'));  
+
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE ON tempdb.* TO 'rpi@%.%.%.%' IDENTIFIED BY 'paswd';  
+ 
+FLUSH PRIVILEGES;`  
+---
+`sudo vim /etc/mysql/my.cnf   
+blind 127.0.0.1 with #  
+
+sudo service mysql restart`  
+
 ## R
 `sudo apt-get install r-base`  
 `R`  
