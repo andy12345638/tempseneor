@@ -44,6 +44,7 @@ temp4 decimal(5,3));  `
 `GRANT SELECT,INSERT,UPDATE,DELETE,CREATE ON tempdb.* TO 'rpi@%.%.%.%' IDENTIFIED BY 'paswd';`  
  
 `FLUSH PRIVILEGES;`  
+
 ---
 `sudo vim /etc/mysql/my.cnf`   
 `blind 127.0.0.1 with #`  
