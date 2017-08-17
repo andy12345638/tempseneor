@@ -3,37 +3,16 @@ library(shiny)
 library(RMySQL)
 server <- function(input, output,session) {
   conn <- dbConnect(MySQL(),host="192.168.0.0", dbname = "tempdb", username="rpi", password="passwd")
-  sqldf = dbGetQuery(conn,"select * from solar_schema.solar_data2 where time > (now() - INTERVAL 72 HOUR) LIMIT 4320;")
-  daysqldf = dbGetQuery(conn,"select * from solar_schema.solar_data2 where  DATE(time) = CURDATE() and hour(time)  BETWEEN '05' AND '18';")
-  ghost_w=dbGetQuery(conn,"select round(avg(w),0) from solar_schema.solar_data2 where   hour(time)=hour(now()) and minute(time)=minute(now()) group by date_format(time,'%H:%i');")
-  ghost_hs=dbGetQuery(conn,"select date_format(time,'%H:%i') as t,avg(w) as w from solar_schema.solar_data2 group by date_format(time,'%H:%i');")
-  
+  temp120 = dbGetQuery(conn,"select * from tempdb.temp where time > (now() - INTERVAL 2 HOUR) LIMIT 120;")
+  temp10080 = dbGetQuery(conn,"select * from tempdb.temp where time > (now() - INTERVAL 148 HOUR) LIMIT 10080;")
 
-  sqldaykwh=dbGetQuery(conn,"select from_days(to_days(time)) as date,max(wh) as max, min(wh) as min ,max(wh) - min(wh) as daywh from solar_data2 group by from_days(to_days(time));")
   dbDisconnect(conn)  
-  sqldf=as.data.frame(sqldf,stringsAsFactors=FALSE)
-  sqldf$time%<>%strptime(., "%Y-%m-%d %H:%M:%S")
-  daysqldf=as.data.frame(daysqldf,stringsAsFactors=FALSE)
-  daysqldf$time%<>%strptime(., "%Y-%m-%d %H:%M:%S")
-  ghost_hs=as.data.frame(ghost_hs,stringsAsFactors=FALSE)
-  ghost_hs$t%<>%strptime(., "%H:%M")
-  
-  #df=read.csv("/home/fisher/Sync/df.csv",header=T,sep=",", stringsAsFactors=FALSE)
-  #df=as.data.frame(df,stringsAsFactors=FALSE)
-  #df$t%<>%strptime(., "%Y-%m-%d %H:%M:%S")
-  
-  #kwhday=read.csv("/home/fisher/Sync/kwhday.csv",header=T,sep=",", stringsAsFactors=FALSE)
-  #kwhday%<>%as.data.frame(.,stringsAsFactors=FALSE)
-  sqldaykwh%<>%as.data.frame(.,stringsAsFactors=FALSE)
-  sqldaykwh$date%<>%as.Date(.,origin="1970-01-01")
-#  num=dim(data)[1]/9
-#  t=array(0,dim=c(num))
-#  v=array(0,dim=c(num))
-#  a=array(0,dim=c(num))
-#  w=array(0,dim=c(num))
-#  kwh=array(0,dim=c(num))
-  
 
+  #sqldf=as.data.frame(sqldf,stringsAsFactors=FALSE)
+  temp120$timestamp%<>%strptime(., "%Y-%m-%d %H:%M:%S")
+  temp10080$timestamp%<>%strptime(., "%Y-%m-%d %H:%M:%S")
+  
+  
   output$currentVersion <- renderText({
     invalidateLater(1000*60*2, session)
     #df=read.csv("/home/fisher/Sync/df.csv",header=T,sep=",", stringsAsFactors=FALSE)
