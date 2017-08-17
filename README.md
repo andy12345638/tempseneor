@@ -34,7 +34,7 @@ CREATE TABLE temp (timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 temp1 decimal(5,3),  
 temp2 decimal(5,3),  
 temp3 decimal(5,3),  
-temp4 decimal(5,3));  `
+temp4 decimal(5,3)); `
 
 ---
 `use mysql;`  
