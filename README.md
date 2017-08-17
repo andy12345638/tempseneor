@@ -2,7 +2,7 @@
 rpi3 with ds18b20
 
 # 材料
-1. Raspberry PI 3 Model B $1800內  
+1. Raspberry PI 3 Model B $1800內  1+3+4=$1841含運
 2. Sandisk sd card 32G $500 內  
 3. 110V to USB 充電器 2.5A $300  
 4. usb 充電線 30cm $100內  
