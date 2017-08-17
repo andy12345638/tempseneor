@@ -1,14 +1,8 @@
-#suntempsql.sh 2017/05/26 change to bash>sql>r no sqldaykwh table
-#db=solar_schema
-#table=solar_data2
-#include c( time | v | a | w | wh | D1temp | D2temp )
 library(magrittr)
 library(shiny)
 library(RMySQL)
 server <- function(input, output,session) {
-  #data=read.csv("~/Sync/log5.csv",header=F,sep=" ", stringsAsFactors=FALSE)
-  conn <- dbConnect(MySQL(),host="140.112.57.110", dbname = "solar_schema", username="rpi", password="a09876543")
-  #sqldf = dbGetQuery(conn, "SELECT * FROM solar_schema.solar_data;")
+  conn <- dbConnect(MySQL(),host="192.168.0.0", dbname = "tempdb", username="rpi", password="passwd")
   sqldf = dbGetQuery(conn,"select * from solar_schema.solar_data2 where time > (now() - INTERVAL 72 HOUR) LIMIT 4320;")
   daysqldf = dbGetQuery(conn,"select * from solar_schema.solar_data2 where  DATE(time) = CURDATE() and hour(time)  BETWEEN '05' AND '18';")
   ghost_w=dbGetQuery(conn,"select round(avg(w),0) from solar_schema.solar_data2 where   hour(time)=hour(now()) and minute(time)=minute(now()) group by date_format(time,'%H:%i');")
