@@ -51,6 +51,12 @@ temp4 decimal(5,3)); `
 
 `sudo service mysql restart`  
 
+---
+mysql_config_editor set --login-path=tempsensor --user=user --host=127.0.0.1 --port=3306 --password
+
+https://shazi.info/mysql-%E5%9F%B7%E8%A1%8C-bash-script-%E5%87%BA%E7%8F%BE-warning-using-a-password-on-the-command-line-interface-can-be-insecure/
+
+
 ## R
 `sudo apt-get install r-base`  
 `R`  
