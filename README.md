@@ -27,14 +27,18 @@ rpi3 with ds18b20
 
 ## mysql
 `sudo apt-get install mysql-server mysql-clent`  
+
 `mysql -u root -p `  
-`CREATE DATABASE tempdb;  
-USE tempdb;  
-CREATE TABLE temp (timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  
-temp1 decimal(5,3),  
-temp2 decimal(5,3),  
-temp3 decimal(5,3),  
-temp4 decimal(5,3)); `
+
+`CREATE DATABASE tempdb;`  
+
+`USE tempdb;`
+
+`CREATE TABLE temp (timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  `
+`temp1 decimal(5,3),  `
+`temp2 decimal(5,3),  `
+`temp3 decimal(5,3),  `
+`temp4 decimal(5,3)); `
 
 ---
 `use mysql;`  
@@ -52,7 +56,7 @@ temp4 decimal(5,3)); `
 `sudo service mysql restart`  
 
 ---
-mysql_config_editor set --login-path=tempsensor --user=user --host=127.0.0.1 --port=3306 --password
+`mysql_config_editor set --login-path=tempsensor --user=user --host=127.0.0.1 --port=3306 --password`  
 
 https://shazi.info/mysql-%E5%9F%B7%E8%A1%8C-bash-script-%E5%87%BA%E7%8F%BE-warning-using-a-password-on-the-command-line-interface-can-be-insecure/
 
