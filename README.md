@@ -45,7 +45,7 @@ rpi3 with ds18b20
  
 `INSERT INTO user(host,user,password) VALUES('%','rpi',password('paswd'));`  
 
-`GRANT SELECT,INSERT,UPDATE,DELETE,CREATE ON tempdb.* TO 'rpi@%.%.%.%' IDENTIFIED BY 'paswd';`  
+`GRANT SELECT,INSERT,UPDATE,DELETE,CREATE ON tempdb.* TO 'rpi'@'%.%.%.%' IDENTIFIED BY 'paswd';`  
  
 `FLUSH PRIVILEGES;`  
 
