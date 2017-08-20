@@ -26,7 +26,7 @@ rpi3 with ds18b20
 >https://fourdollars.blogspot.tw/2014/08/ubuntu-1404-exim4-gmail.html
 
 ## mysql
-`sudo apt-get install mysql-server mysql-clent`  
+`sudo apt-get install mysql-server mysql-client`  
 
 `mysql -u root -p `  
 
