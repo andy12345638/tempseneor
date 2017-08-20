@@ -45,7 +45,7 @@ rpi3 with ds18b20
  
 `INSERT INTO user(host,user,password) VALUES('%','rpi',password('paswd'));`  
 
-`GRANT SELECT,INSERT,UPDATE,DELETE,CREATE ON tempdb.* TO 'rpi@%.%.%.%' IDENTIFIED BY 'paswd';`  
+`GRANT SELECT,INSERT,UPDATE,DELETE,CREATE ON tempdb.* TO 'rpi'@'%.%.%.%' IDENTIFIED BY 'paswd';`  
  
 `FLUSH PRIVILEGES;`  
 
@@ -62,7 +62,9 @@ https://shazi.info/mysql-%E5%9F%B7%E8%A1%8C-bash-script-%E5%87%BA%E7%8F%BE-warni
 
 
 ## R
-`sudo apt-get install r-base`  
+`sudo apt-get install r-base`   
+`sudo apt-get install libmariadb-client-lgpl-dev libmariadbclient-dev`  
+
 `R`  
 `install.packages("DBI")`  
 `install.packages("RMySQL")`
