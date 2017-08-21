@@ -6,7 +6,7 @@ $db = new PDO($dsn,"rpi","a09876543");
 
 $old_path = getcwd();
 chdir('/home/pi/tempsensor');
-shell_exec('Rscript temp120png.r');
+shell_exec('Rscript temp10080png.r');
 chdir($old_path);
 
 
@@ -15,7 +15,7 @@ chdir($old_path);
 //$stmt->execute();
 //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-foreach($db->query("SELECT * FROM solar_data2 order by time desc limit 2;") as $a){print_r($a);}
+foreach($db->query("SELECT * FROM solar_data2 order by time desc limit 2;") as $a){print_r($a['time']);}
 //$rows = $pdo->query("select w from solar_data limit 1");
 //foreach( $db->query( "select * from solar_data limit 1" ) as $b){print_r($b);}
 ?>
