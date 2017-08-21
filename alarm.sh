@@ -14,18 +14,18 @@ do
         echo $temp1
         while [ 1 -eq $(echo "$temp1 > 32.00"|bc -l) ]
         do
-                echo "temp1>30"
+                echo "temp1>32"
 			if [ "$sendtimes" -lt "3" ]
 			then
 				echo "send"#send email
-				#./alarmemail.sh
+				./alarmemail.sh
 				let "sendtimes++"
 			fi
-                sleep 3
+                sleep 600
 		temp1=`readtemp 3`
 	        echo $temp1
         done
 
-        sleep 10
+        sleep 60
 done
 
