@@ -4,12 +4,14 @@ temp.df = dbGetQuery(conn, "select * from tempdb.temp where timestamp > (now() -
 dbDisconnect(conn)
 
 temp.df$timestamp=as.POSIXct(temp.df$timestamp)
+maxtemp=max(max(temp.df$temp1),max(temp.df$temp2),max(temp.df$temp3),max(temp.df$temp4))
+mintemp=min(min(temp.df$temp1),min(temp.df$temp2),min(temp.df$temp3),min(temp.df$temp4))
 
 png("temp10080png.png",width = 1200, height = 400)
 #plot(temp.df$temp1~temp.df$timestamp,type="l",ylab="Temperature",xlab="Time",main=paste(head(temp.df$timestamp,1),"~",substr(tail(temp.df$timestamp,1),1,20)))
 
 
-    plot(temp.df$timestamp,temp.df$temp1,type="n",main=paste(head(temp.df$timestamp,1),"~",substr(tail(temp.df$timestamp,1),1,20)),xlab="Time",ylab="溫度",ylim=c(20,35))
+    plot(temp.df$timestamp,temp.df$temp1,type="n",main=paste(head(temp.df$timestamp,1),"~",substr(tail(temp.df$timestamp,1),1,20)),xlab="Time",ylab="Temperature",ylim=c(mintemp,maxtemp))
     lines(temp.df$timestamp,temp.df$temp1,col="black",lwd=2.5)
     lines(temp.df$timestamp,temp.df$temp2,col="green",lwd=2.5)
     lines(temp.df$timestamp,temp.df$temp3,col="blue",lwd=2.5)
