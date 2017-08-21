@@ -15,7 +15,7 @@ png("temp10080png.png",width = 1200, height = 400)
     lines(temp.df$timestamp,temp.df$temp3,col="blue",lwd=2.5)
     lines(temp.df$timestamp,temp.df$temp4,col="brown",lwd=2.5)
     abline(h=30,col="red")
-    	legend("topright", # places a legend at the appropriate place 
+    	legend("bottomleft", # places a legend at the appropriate place 
     	    c("Temp1","Temp2","Temp3","Temp4","30 degree"), # puts text in the legend
     	    lty=c(1,1,1,1,1), # gives the legend appropriate symbols (lines)
     	    lwd=c(2.5,2.5,2.5,2.5,2.5),col=c("black","green","blue","brown","red")# gives the legend lines the correct color and width
