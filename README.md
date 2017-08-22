@@ -105,6 +105,7 @@ https://www.raspberrypi.org/forums/viewtopic.php?t=111375&p=765242
 `sudo cp ~/tempsensor/plot.php /var/www/html`  
 
 # Set crontab
+`MAILTO=""`  
 `crontab -e`#add  
 `* * * * * /home/pi/tempsensor/scantemp.sh`  
 `@reboot /home/pi/tempsensor/alarm.sh`  
