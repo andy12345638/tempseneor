@@ -101,8 +101,8 @@ https://www.raspberrypi.org/forums/viewtopic.php?t=111375&p=765242
 
 
 # apache2 php5
-sudo apt-get install apache2 php5 php5-mysql
-sudo cp ~/tempsensor/plot.php /var/www/html
+`sudo apt-get install apache2 php5 php5-mysql`  
+`sudo cp ~/tempsensor/plot.php /var/www/html`  
 
 # Set crontab
 `crontab -e`#add  
