@@ -99,6 +99,10 @@ https://www.raspberrypi.org/forums/viewtopic.php?t=111375&p=765242
 
 `cat /sys/bus/w1/devices/28-00000283c6cd/w1_slave | sed -n 's/^.*\(t=[^ ]*\).*/\1/p' | sed 's/t=//' | awk '{x=$1}END{print(x/1000)}'`  
 
+
+#apache2 php5
+sudo apt-get install apache2 php5 php5-mysql
+
 # Set crontab
 `crontab -e`#add  
 `* * * * * /home/pi/tempsensor/scantemp.sh`  

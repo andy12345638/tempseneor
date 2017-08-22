@@ -7,7 +7,7 @@ temp.df$timestamp=as.POSIXct(temp.df$timestamp)
 maxtemp=max(max(temp.df$temp1),max(temp.df$temp2),max(temp.df$temp3),max(temp.df$temp4))
 mintemp=min(min(temp.df$temp1),min(temp.df$temp2),min(temp.df$temp3),min(temp.df$temp4))
 
-png("temp10080png.png",width = 1200, height = 400)
+png("/home/pi/tempsensor/temp10080png.png",width = 1200, height = 400)
 #plot(temp.df$temp1~temp.df$timestamp,type="l",ylab="Temperature",xlab="Time",main=paste(head(temp.df$timestamp,1),"~",substr(tail(temp.df$timestamp,1),1,20)))
 
 

@@ -19,6 +19,12 @@ wait $PID4
 
 echo "INSERT INTO tempdb.temp (temp1,temp2,temp3,temp4) VALUE($temp1,$temp2,$temp3,$temp4)"|mysql -h 127.0.0.1 -urpi -p12345678
 
+Rscript /home/pi/tempsensor/temp120png.r
+Rscript /home/pi/tempsensor/temp10080png.r
+
+sudo cp /home/pi/tempsensor/temp120png.png /var/www/html/
+sudo cp /home/pi/tempsensor/temp10080png.png /var/www/html/
+
 exit 0
 
 
