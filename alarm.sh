@@ -1,18 +1,25 @@
 #!/bin/bash
 #temp1=`cat /sys/bus/w1/devices/28-0216225333ee/w1_slave | sed -n 's/^.*\(t=[^ ]*\).*/\1/p' | sed 's/t=//' | awk '{x=$1}END{print(x)}'`
 
-readtemp () { n="$1" ;echo "select * from tempdb.temp order by timestamp desc limit 1"|mysql -sN -uroot -p1234|awk '{print $'$n'}' ;}
+readtemp () { n="$1" ;echo "select * from tempdb.temp order by timestamp desc limit 1"|mysql -sN -urpi -p12345678|awk '{print $'$n'}' ;}
 
-temp1=`readtemp 3`
-temp2=`readtemp 4`
+maxtemp () {
+temp1=`readtemp 3`;
+temp2=`readtemp 4`;
+temp3=`readtemp 5`;
+temp4=`readtemp 6`;
+Rscript -e "args<-commandArgs(TRUE);cat(max(as.numeric(args)))" 1 $temp1 $temp2 $temp3 $temp4;}
+
+max1=`maxtemp`
+#echo $max1
 
 
 while [ "1" -eq "1" ]
 do
-        temp1=`readtemp 3`
+        max1=`maxtemp`
 	sendtimes=0
-        echo $temp1
-        while [ 1 -eq $(echo "$temp1 > 32.00"|bc -l) ]
+        echo $max1
+        while [ 1 -eq $(echo "$max1 > 32.00"|bc -l) ]
         do
                 echo "temp1>32"
 			if [ "$sendtimes" -lt "3" ]
@@ -22,8 +29,8 @@ do
 				let "sendtimes++"
 			fi
                 sleep 600
-		temp1=`readtemp 3`
-	        echo $temp1
+		max1=`maxtemp`
+	        echo $max1
         done
 
         sleep 60
