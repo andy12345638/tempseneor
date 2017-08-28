@@ -1,5 +1,6 @@
 #!/bin/bash
 #temp1=`cat /sys/bus/w1/devices/28-0216225333ee/w1_slave | sed -n 's/^.*\(t=[^ ]*\).*/\1/p' | sed 's/t=//' | awk '{x=$1}END{print(x)}'`
+cd /home/pi/tempsensor/
 
 readtemp () { n="$1" ;echo "select * from tempdb.temp order by timestamp desc limit 1"|mysql -sN -urpi -p12345678|awk '{print $'$n'}' ;}
 

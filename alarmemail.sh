@@ -1,4 +1,5 @@
 #!/bin/bash
+cd /home/pi/tempsensor/
 source /home/pi/tempsensor/email.conf
 
 #Rscript temp120png.r
