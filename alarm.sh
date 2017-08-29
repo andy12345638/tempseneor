@@ -27,6 +27,7 @@ do
 			then
 				echo "send"#send email
 				/home/pi/tempsensor/alarmemail.sh
+				/home/pi/tempsensor/alarmphone.sh
 				let "sendtimes++"
 			fi
                 sleep 600
