@@ -1,4 +1,5 @@
 #!/bin/bash
+cd /home/pi/tempsensor
 source email.conf
 
 #DATE=`date +%Y-%m-%d:%H:%M:%S`

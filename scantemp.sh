@@ -1,4 +1,6 @@
 #!/bin/bash
+cd /home/pi/tempsensor/
+
 
 temp1=`cat /sys/bus/w1/devices/28-000005fb9a56/w1_slave | sed -n 's/^.*\(t=[^ ]*\).*/\1/p' | sed 's/t=//' | awk '{x=$1}END{print(x/1000)}' &` 
 PID1=$!
