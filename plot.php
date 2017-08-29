@@ -6,7 +6,8 @@
 
 
 <body>
-//<?php
+機房溫度監控 <br>
+<?php
 //$pdo = new PDO('mysql:host=140.112.57.110;dbname=solar_schema;port=3306','rpi','a09876543');
 
 //$dsn = "mysql:host=140.112.57.110;dbname=solar_schema";
@@ -27,9 +28,10 @@
 //$rows = $pdo->query("select w from solar_data limit 1");
 //foreach( $db->query( "select * from solar_data limit 1" ) as $b){print_r($b);}
 //?>
-
+兩個小時內溫度 <br>
 <img src="temp120png.png" style="width:1200px;height:400px;">
+本週溫度 <br>
 <img src="temp10080png.png" style="width:1200px;height:400px;">
-Try it Yourself »
+
 </body>
 </html>
