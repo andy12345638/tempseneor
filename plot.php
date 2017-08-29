@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>機房溫度監控</title>
 <meta http-equiv="refresh" content="60" />
 </head>
 
