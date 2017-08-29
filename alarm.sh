@@ -20,9 +20,9 @@ do
         max1=`maxtemp`
 	sendtimes=0
         echo $max1
-        while [ 1 -eq $(echo "$max1 > 32.00"|bc -l) ]
+        while [ 1 -eq $(echo "$max1 > 30.00"|bc -l) ]
         do
-                echo "temp1>32"
+                echo "temp1>30"
 			if [ "$sendtimes" -lt "3" ]
 			then
 				echo "send"#send email
