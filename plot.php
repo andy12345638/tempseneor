@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>機房溫度監控</title>
+<title>303機房溫度監控</title>
 <meta http-equiv="refresh" content="60" />
 </head>
 
 
 <body>
-<h1><center>機房溫度監控</center></h1> <br>
+<h1><center>303機房溫度監控</center></h1> <br>
 <hr>
 <?php
 //$pdo = new PDO('mysql:host=140.112.57.110;dbname=solar_schema;port=3306','rpi','a09876543');
